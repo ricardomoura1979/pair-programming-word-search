@@ -35,4 +35,26 @@ describe("#wordSearch()", function() {
 
     assert.isTrue(result);
   });
+
+  it("should return true if the word is present (vertically)", ()=> {
+    const result = wordSearch([
+      ['S', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['E', 'E', 'I', 'N', 'F', 'E', 'Y', 'D'],
+      ['I', 'F', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['N', 'M', 'J', 'T', 'E', 'V', 'R', 'G'],
+      ['F', 'H', 'C', 'S', 'Y', 'E', 'R', 'L'],
+      ['E', 'F', 'R', 'E', 'N', 'E', 'Y', 'B'],
+      ['L', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
+      ['D', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['T', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], 'SEINFELDT')
+
+    assert.isTrue(result);
+  })
+
+  it ("should return false if an empty array is inputed for letters", () => {
+    const result = wordSearch([], "SEINFELD")
+
+    assert.isFalse(result)
+  })
 });
